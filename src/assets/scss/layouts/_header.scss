@@ -1,0 +1,22 @@
+.header {
+	background-image: url("../images/desktop/bg-pattern-header.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: $s-white;
+	border-bottom-left-radius: 80px;
+
+	display: flex;
+	align-items: center;
+	position: relative;
+	padding: 3rem 15rem 8rem 15rem;
+
+	&-title {
+		margin-right: auto;
+
+		& a {
+			font-size: 2.5rem;
+			color: $s-white;
+			text-decoration: none;
+		}
+	}
+}

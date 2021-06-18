@@ -1,0 +1,87 @@
+.card {
+	width: 32%;
+	background: $s-white;
+	display: block;
+
+	padding: 6rem 2rem 3rem 2rem;
+	margin-bottom: 7rem;
+	border-radius: 4px;
+	position: relative;
+
+	&-image {
+		width: 15%;
+		position: absolute;
+		top: -25px;
+		left: 25px;
+		border-radius: 16px;
+		height: 50px;
+
+		& img {
+			width: 100%;
+			height: 100%;
+			// display: block;
+			border-radius: 16px;
+			object-fit: cover;
+		}
+	}
+
+	&-content {
+		position: relative;
+		text-decoration: none;
+
+		&__items {
+			color: $s-dark-grey;
+
+			&--jobAge {
+				margin-bottom: 1.5rem;
+				font-size: 1.5rem;
+				text-transform: capitalize;
+
+				& span {
+					// text-transform: capitalize;
+
+					&::after {
+						content: "";
+						width: 4px;
+						height: 4px;
+						border-radius: 50%;
+						background: $s-dark-grey;
+						display: inline-block;
+						margin: 0 1rem;
+					}
+				}
+			}
+
+			&--jobTitle {
+				margin-bottom: 1.5rem;
+				font-size: 2rem;
+				color: $p-midnight;
+			}
+
+			&--firm {
+				margin-bottom: 2.5rem;
+				line-height: 2.5rem;
+				font-size: 1.5rem;
+			}
+
+			&--location {
+				font-size: 1.5rem;
+				color: $p-violet;
+			}
+		}
+	}
+}
+
+.network-error {
+	text-align: center;
+	background: orangered;
+	width: 40%;
+	margin: 0 auto;
+	padding: 2.5rem 1.5rem;
+	border-radius: 4px;
+
+	&__title {
+		font-size: 3rem;
+		color: $s-white;
+	}
+}

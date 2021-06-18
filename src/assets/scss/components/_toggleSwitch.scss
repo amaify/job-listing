@@ -1,0 +1,77 @@
+.toggle-switch {
+	position: relative;
+	display: flex;
+	align-items: center;
+
+	&::before {
+		content: url("../images/desktop/icon-sun.svg");
+		margin-right: 0.5rem;
+	}
+
+	&::after {
+		content: url("../images/desktop/icon-moon.svg");
+		margin-left: 0.5rem;
+	}
+
+	&__checkbox {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+
+		&:checked + span {
+			&::before {
+				left: 0;
+			}
+		}
+	}
+
+	&__span {
+		position: relative;
+		width: 50px;
+		height: 25px;
+		display: flex;
+		cursor: pointer;
+		border-radius: 100px;
+		background-color: $s-white;
+		transition: background-color 0.2s;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translate(35%, -50%);
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			transition: 0.2s;
+			background: $p-violet;
+		}
+	}
+}
+
+.toggle-switch__checked {
+	position: relative;
+	display: flex;
+	align-items: center;
+
+	&::before {
+		content: url("../images/desktop/icon-sun.svg");
+		margin-right: 0.5rem;
+	}
+
+	&::after {
+		content: url("../images/desktop/icon-moon.svg");
+		margin-left: 0.5rem;
+	}
+
+	&--checkbox {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	& span::before {
+		left: 50%;
+	}
+}

@@ -1,0 +1,74 @@
+.form {
+	padding: 0 15rem;
+	position: absolute;
+	width: 100%;
+	top: 98px;
+	// left: 0;
+
+	&-contents {
+		display: flex;
+		padding: 1rem 1.5rem 1rem 2rem;
+		align-items: center;
+		background: $s-white;
+		overflow: hidden;
+		border-radius: 4px;
+	}
+}
+
+.description,
+.location {
+	display: flex;
+	position: relative;
+
+	& img {
+		margin-right: 1.5rem;
+	}
+
+	& input {
+		width: 100%;
+		border: none;
+		outline: none;
+
+		&:focus {
+			border: none;
+			outline: none;
+		}
+	}
+
+	&::after {
+		content: "";
+		width: 1px;
+		height: 65px;
+		position: absolute;
+		right: 0;
+		top: -18px;
+		margin-right: 1.5rem;
+		background: $s-light-grey;
+		display: inline-block;
+	}
+}
+
+.description {
+	width: 45%;
+}
+
+.location {
+	width: 35%;
+}
+
+.jobtype {
+	display: flex;
+	align-items: center;
+	width: 25%;
+
+	& input {
+		margin-right: 2rem;
+	}
+
+	& label {
+		font-size: 1.5rem;
+		text-transform: capitalize;
+		font-weight: 600;
+		margin-right: 2.5rem;
+	}
+}
