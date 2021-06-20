@@ -29,4 +29,15 @@
 			background: rgba($p-light-violet, 0.3);
 		}
 	}
+
+	&-3 {
+		padding: 0;
+		background: $p-violet;
+		padding: 1rem 1.5rem;
+		margin-left: 2.5rem;
+
+		@include responsive_mode(tablet-portrait) {
+			display: none;
+		}
+	}
 }

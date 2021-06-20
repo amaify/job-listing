@@ -11,3 +11,5 @@ export const SET_THEME_DARK = "SET_THEME_DARK";
 
 export const NEW_JOB_DATA = "NEW_JOB_DATA";
 export const NO_JOB = "NO_JOB";
+export const SHOW_MODAL = "SHOW_MODAL";
+export const REMOVE_MODAL = "REMOVE_MODAL";

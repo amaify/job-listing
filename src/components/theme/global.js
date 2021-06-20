@@ -99,6 +99,24 @@ body {
 	.noJobs {
 		color: ${(props) => (props.theme.mode === "light" ? "" : "#9daec2")}
 	}
+
+	.modal {
+		background-color: ${(props) =>
+			props.theme.mode === "light" ? "#ffffff" : "#19202d"};
+		transition: background-color .3s ease-in;
+	}
+
+	.modal-jobType__checkbox label {
+		color: ${(props) => (props.theme.mode === "light" ? "" : "#ffffff")}
+	}
+
+	.modal-location, .modal-location input {
+		background: ${(props) => (props.theme.mode === "light" ? "" : "#19202d")}
+	}
+
+	.modal-location input::placeholder {
+		color: ${(props) => (props.theme.mode === "light" ? "" : "#9daec2")}
+	}
 }
 
 

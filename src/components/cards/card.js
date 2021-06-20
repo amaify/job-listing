@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { timeDifference, logo } from "../cardComponents/cardUtility";
+import {
+	timeDifference,
+	logo,
+	formatDate,
+} from "../cardComponents/cardUtility";
 import Button from "../button/button";
 import { BallTriangle } from "react-loading-icons";
+import Modal from "../modal/modal";
 
 import { connect } from "react-redux";
 
@@ -30,43 +35,45 @@ function Cards(props) {
 		</div>
 	);
 
-	let jobs = fetchFailed ? (
-		""
-	) : jobData === null ? (
-		<p className="no-listing">No Jobs listing.</p>
-	) : (
-		jobData.slice(0, visible).map((job) => (
-			<div className="card" key={job.id}>
-				<div className="card-image">
-					<img src={logo(job.company_logo_url)} alt="Company Logo" />
-				</div>
-				<Link
-					className="card-content"
-					to={{
-						pathname: `/jobs/${job.id}`,
-						state: job,
-					}}
-				>
-					<div className="card-content__items">
-						<p className="card-content__items--jobAge">
-							<span>{timeDifference(job.publication_date)}</span>{" "}
-							{job.job_type.replace("_", " ")}
-						</p>
-						<h2 className="card-content__items--jobTitle">{job.title}</h2>
-						<p className="card-content__items--firm">{job.company_name}</p>
-						<h3 className="card-content__items--location">
-							{job.candidate_required_location}
-						</h3>
+	let jobs = fetchFailed
+		? ""
+		: jobData === null
+		? // <p className="no-listing">No Jobs listing.</p>
+		  spinner
+		: jobData.slice(0, visible).map((job) => (
+				<div className="card" key={job.id}>
+					<div className="card-image">
+						<img src={logo(job.company_logo_url)} alt="Company Logo" />
 					</div>
-				</Link>
-			</div>
-		))
-	);
+					<Link
+						className="card-content"
+						to={{
+							pathname: `/jobs/${job.id}`,
+							state: job,
+						}}
+					>
+						<div className="card-content__items">
+							<p className="card-content__items--jobAge">
+								{/* <span>{timeDifference(job.publication_date)}</span> */}
+								<span>{formatDate(job.publication_date)}</span>{" "}
+								{job.job_type !== ""
+									? job.job_type.replace("_", " ")
+									: "Not Stated"}
+							</p>
+							<h2 className="card-content__items--jobTitle">{job.title}</h2>
+							<p className="card-content__items--firm">{job.company_name}</p>
+							<h3 className="card-content__items--location">
+								{job.candidate_required_location}
+							</h3>
+						</div>
+					</Link>
+				</div>
+		  ));
 
 	loading ? (mainJobLists = spinner) : (mainJobLists = jobs);
 
 	noJob
-		? (mainJobLists = <p className="noJobs">No Job Found!</p>)
+		? (mainJobLists = <p className="noJobs">No search result found!</p>)
 		: (mainJobLists = jobs);
 
 	return (
@@ -91,6 +98,7 @@ function Cards(props) {
 			) : (
 				<Button text="Load More" btnNumber="1" onClick={showMoreJobs} />
 			)}
+			{/* <Modal /> */}
 		</main>
 	);
 }

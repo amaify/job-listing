@@ -7,6 +7,8 @@ import {
 	toggleTrue,
 	newJobData,
 	noJob,
+	showModal,
+	removeModal,
 } from "../actions/actions";
 
 // https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json
@@ -49,5 +51,17 @@ export const newJobDatas = (xx) => {
 export const noJobFound = () => {
 	return (dispatch) => {
 		dispatch(noJob());
+	};
+};
+
+export const displayModal = () => {
+	return (dispatch) => {
+		dispatch(showModal());
+	};
+};
+
+export const hideModal = () => {
+	return (dispatch) => {
+		dispatch(removeModal());
 	};
 };

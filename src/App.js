@@ -10,7 +10,7 @@ import { ThemeProvider } from "styled-components";
 
 import "./assets/scss/main.css";
 import { loadData } from "./store/actions/actions";
-import { getData } from "./store/utils/utility";
+import { getData, hideModal } from "./store/utils/utility";
 
 function getInitialTheme(themeMode) {
 	try {
@@ -24,9 +24,8 @@ function getInitialTheme(themeMode) {
 
 function App(props) {
 	let mainTheme = props.setTheme.mode;
+	let modal = props.modal;
 	const dispatch = useDispatch();
-	// const [theme, setTheme] = useState(getInitialTheme());
-	// const [theme, setTheme] = useState(getInitialTheme(mainTheme));
 
 	useEffect(() => {
 		localStorage.setItem("theme", JSON.stringify(mainTheme));
@@ -38,11 +37,17 @@ function App(props) {
 		dispatch(getData());
 	}, [dispatch]);
 
+	const removeModal = () => {
+		return dispatch(hideModal());
+	};
+
 	return (
 		<ThemeProvider theme={props.setTheme}>
 			<>
 				<GlobalStyle />
 				<div className="body">
+					{modal && <div className="backdrop" onClick={removeModal}></div>}
+					{/* <div className="backdrop" onClick={removeModal}></div> */}
 					<Routes />
 				</div>
 			</>
@@ -53,6 +58,7 @@ function App(props) {
 const mapStateToProps = (state) => {
 	return {
 		setTheme: state.setTheme,
+		modal: state.showModal,
 	};
 };
 

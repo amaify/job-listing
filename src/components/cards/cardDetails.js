@@ -1,7 +1,11 @@
 import React from "react";
 import Button from "../button/button";
 import { Link, useHistory } from "react-router-dom";
-import { timeDifference, logo } from "../cardComponents/cardUtility";
+import {
+	timeDifference,
+	logo,
+	formatDate,
+} from "../cardComponents/cardUtility";
 
 function removeURLString(companyLink) {
 	let url = companyLink;
@@ -67,12 +71,13 @@ function CardDetails() {
 				<div className="cardDetailsBody-content">
 					<div className="cardDetailsBody__heading">
 						<p className="cardDetailsBody__heading--jobAge">
-							<span>{timeDifference(data.publication_date)}</span>{" "}
+							{/* <span>{timeDifference(data.publication_date)}</span> */}
+							<span>{formatDate(data.publication_date)}</span>{" "}
 							{data.job_type.replace("_", " ")}
 						</p>
 						<h2 className="cardDetailsBody__heading--title">{data.title}</h2>
 						<p className="cardDetailsBody__heading--location">
-							{data.location}
+							{data.candidate_required_location}
 						</p>
 					</div>
 					<div className="cardDetailsBody__heading--link">

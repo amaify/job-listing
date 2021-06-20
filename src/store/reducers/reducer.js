@@ -4,12 +4,12 @@ const initialState = {
 	jobData: null,
 	loading: false,
 	search: false,
+	showModal: false,
 	setToggle: false,
 	failed: false,
 	noJobFound: false,
 	networkError: false,
 	setTheme: { mode: "light" },
-	themeMode: "light",
 };
 
 export const mainReducer = (state = initialState, action) => {
@@ -42,6 +42,12 @@ export const mainReducer = (state = initialState, action) => {
 				loading: false,
 				search: true,
 			};
+
+		case actionType.SHOW_MODAL:
+			return { ...state, showModal: true };
+
+		case actionType.REMOVE_MODAL:
+			return { ...state, showModal: false };
 
 		case actionType.NO_JOB:
 			return { ...state, noJobFound: true };

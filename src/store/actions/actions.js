@@ -88,3 +88,15 @@ export const noJob = () => {
 		type: actionType.NO_JOB,
 	};
 };
+
+export const showModal = () => {
+	return {
+		type: actionType.SHOW_MODAL,
+	};
+};
+
+export const removeModal = () => {
+	return {
+		type: actionType.REMOVE_MODAL,
+	};
+};
