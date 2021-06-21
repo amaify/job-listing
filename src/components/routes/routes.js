@@ -5,19 +5,8 @@ import Details from "../../pages/details";
 export const Routes = () => {
 	return (
 		<Switch>
-			<Route
-				path="/"
-				exact
-				render={(props) => (
-					// <Home {...props} theme={theme} setTheme={setTheme} />
-					<Home {...props} />
-				)}
-			/>
-			<Route
-				path="/jobs/:id"
-				exact
-				render={(props) => <Details {...props} />}
-			/>
+			<Route path="/" exact component={Home} />
+			<Route path="/jobs/:id" exact component={Details} />
 		</Switch>
 	);
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import Button from "../button/button";
 import { useHistory } from "react-router-dom";
@@ -21,6 +21,10 @@ function CardDetails() {
 	!companyLink
 		? (companyLink = "https://google.com")
 		: (companyLink = data.url);
+
+	useEffect(() => {
+		return window.scrollTo(0, 0);
+	}, []);
 
 	return (
 		<>

@@ -1023,6 +1023,12 @@ html {
   line-height: 2.5rem;
 }
 
+.cardDetailsBody-description p:nth-child(19) img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .cardDetailsBody-description p:nth-child(26),
 .cardDetailsBody-description p:nth-child(27) {
   font-size: 1.4rem;
