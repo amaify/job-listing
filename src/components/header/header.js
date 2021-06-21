@@ -7,11 +7,20 @@ import { setThemeLight, setThemeDark } from "../../store/utils/utility";
 
 function Header(props) {
 	const dispatch = useDispatch();
-	const [, setToggle] = useState(props.toggled);
+	const [, setToggle] = useState(false);
+
+	let toggled = localStorage.getItem("toggle");
+
+	let toggledObject = JSON.parse(toggled);
+	let mainToggle = toggledObject;
+
+	toggledObject === null
+		? (toggledObject = false)
+		: (toggledObject = mainToggle);
 
 	useEffect(() => {
-		localStorage.setItem("toggle", JSON.stringify(props.toggled));
-	}, [props.toggled]);
+		localStorage.setItem("toggle", JSON.stringify(toggledObject));
+	}, [toggledObject]);
 
 	return (
 		<header className="header">
@@ -26,6 +35,7 @@ function Header(props) {
 				onClick={() =>
 					props.toggled ? dispatch(setThemeLight()) : dispatch(setThemeDark())
 				}
+				toggled={toggledObject}
 			/>
 		</header>
 	);

@@ -9,26 +9,34 @@ import { ThemeProvider } from "styled-components";
 import "./assets/scss/main.css";
 import { getData, hideModal } from "./store/utils/utility";
 
-function getInitialTheme(themeMode) {
-	try {
-		const savedTheme = localStorage.getItem("theme");
+// function getInitialTheme(themeMode) {
+// 	try {
+// 		const savedTheme = localStorage.getItem("theme");
+// 		console.log(savedTheme);
 
-		return savedTheme ? JSON.parse(savedTheme) : { mode: themeMode };
-	} catch (err) {
-		return err;
-	}
-}
+// 		return savedTheme ? JSON.parse(savedTheme) : { mode: themeMode };
+// 	} catch (err) {
+// 		return err;
+// 	}
+// }
 
 function App(props) {
-	let mainTheme = props.setTheme.mode;
+	// let mainTheme = props.setTheme;
 	let modal = props.modal;
+	let grace = localStorage.getItem("theme");
+
+	let themeObject = JSON.parse(grace);
+	let mainTheme = themeObject;
+
+	themeObject === null
+		? (themeObject = { mode: "light" })
+		: (themeObject = mainTheme);
+
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		localStorage.setItem("theme", JSON.stringify(mainTheme));
-	}, [mainTheme]);
-
-	getInitialTheme(mainTheme);
+		localStorage.setItem("theme", JSON.stringify(themeObject));
+	}, [themeObject]);
 
 	useEffect(() => {
 		dispatch(getData());
@@ -39,7 +47,7 @@ function App(props) {
 	};
 
 	return (
-		<ThemeProvider theme={props.setTheme}>
+		<ThemeProvider theme={themeObject}>
 			<>
 				<GlobalStyle />
 				<div className="body">

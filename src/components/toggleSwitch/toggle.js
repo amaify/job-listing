@@ -1,5 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
 
 function Toggle(props) {
 	let toggleSwitch;
@@ -26,10 +25,4 @@ function Toggle(props) {
 	);
 }
 
-const mapStateToProps = (state) => {
-	return {
-		toggled: state.setToggle,
-	};
-};
-
-export default connect(mapStateToProps, null)(Toggle);
+export default Toggle;

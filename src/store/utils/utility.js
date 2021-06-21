@@ -28,12 +28,20 @@ export const getData = () => {
 
 export const setThemeLight = () => {
 	return (dispatch) => {
+		let themeMode = { mode: "light" };
+		themeMode = JSON.stringify(themeMode);
+		localStorage.setItem("theme", themeMode);
+		localStorage.setItem("toggle", false);
 		dispatch(setThemeToLight());
 	};
 };
 
 export const setThemeDark = () => {
 	return (dispatch) => {
+		let themeMode = { mode: "dark" };
+		themeMode = JSON.stringify(themeMode);
+		localStorage.setItem("theme", themeMode);
+		localStorage.setItem("toggle", true);
 		dispatch(setThemeToDark());
 	};
 };
