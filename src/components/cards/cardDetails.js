@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import Button from "../button/button";
 import { useHistory } from "react-router-dom";
 import { logo, formatDate } from "../cardComponents/cardUtility";
@@ -23,6 +24,9 @@ function CardDetails() {
 
 	return (
 		<>
+			<Helmet>
+				<title>Details | {data.title}</title>
+			</Helmet>
 			<section className="cardDetails">
 				<div className="cardDetails-heading">
 					<div className="cardDetails-heading__image">
