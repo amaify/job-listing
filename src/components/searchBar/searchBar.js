@@ -14,7 +14,7 @@ function SearchBar(props) {
 	let [filter] = useState([]);
 
 	useEffect(() => {
-		return window.addEventListener("scroll", () => {
+		window.addEventListener("scroll", () => {
 			const scrollTop = window.scrollY > 500;
 			const form = document.querySelector(".form");
 

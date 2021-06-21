@@ -58,7 +58,9 @@ function Cards(props) {
 							<h2 className="card-content__items--jobTitle">{job.title}</h2>
 							<p className="card-content__items--firm">{job.company_name}</p>
 							<h3 className="card-content__items--location">
-								{job.candidate_required_location}
+								{job.candidate_required_location === ""
+									? "No Location Provided"
+									: job.candidate_required_location}
 							</h3>
 						</div>
 					</Link>

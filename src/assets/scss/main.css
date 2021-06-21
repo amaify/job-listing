@@ -328,6 +328,10 @@ html {
           box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.3);
 }
 
+.scrolled label {
+  margin-right: auto;
+}
+
 .button {
   border: none;
   cursor: pointer;
