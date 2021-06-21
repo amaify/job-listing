@@ -4,14 +4,11 @@ import {
 	setThemeToLight,
 	setThemeToDark,
 	fetchFailed,
-	toggleTrue,
 	newJobData,
 	noJob,
 	showModal,
 	removeModal,
 } from "../actions/actions";
-
-// https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json
 
 export const getData = () => {
 	return (dispatch) => {

@@ -1,7 +1,4 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import FilterLocation from "../searchBar/filterLocation/filterLocation";
-import FilterJobType from "../searchBar/filterJobType/filterJobType";
 import Input from "../input/input";
 import Button from "../button/button";
 import LocationIcon from "../../assets/images/desktop/icon-location.svg";

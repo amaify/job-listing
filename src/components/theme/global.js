@@ -96,6 +96,10 @@ body {
 		color: ${(props) => (props.theme.mode === "light" ? "" : "#ffffff !important")};
 	}
 
+	.cardDetailsBody-description .h3 {
+		color: ${(props) => (props.theme.mode === "light" ? "" : "#ffffff !important")};
+	}
+
 	.noJobs {
 		color: ${(props) => (props.theme.mode === "light" ? "" : "#9daec2")}
 	}

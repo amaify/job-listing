@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect, useDispatch } from "react-redux";
 
 import FilterDesc from "./filterDescription/filterDesc";
@@ -11,7 +11,22 @@ function SearchBar(props) {
 	const [inputDesc, setDesc] = useState("");
 	const [inputLoc, setLocation] = useState("");
 	const [inputFullTime, setFullTime] = useState(false);
-	let [filter, setFiltered] = useState([]);
+	let [filter] = useState([]);
+
+	useEffect(() => {
+		return window.addEventListener("scroll", () => {
+			const scrollTop = window.scrollY > 500;
+			const form = document.querySelector(".form");
+
+			if (form) {
+				if (scrollTop) {
+					form.classList.add("scrolled");
+				} else {
+					form.classList.remove("scrolled");
+				}
+			}
+		});
+	}, []);
 
 	const dispatch = useDispatch();
 
@@ -92,7 +107,7 @@ function SearchBar(props) {
 			return filter;
 		}
 
-		console.log(filter);
+		// console.log(filter);
 		if (filter.length === 0) {
 			return dispatch(noJobFound());
 		}
@@ -100,7 +115,7 @@ function SearchBar(props) {
 		return dispatch(newJobDatas(filter));
 	};
 	return (
-		<div className="form">
+		<nav className="form">
 			<form className="form-contents" onSubmit={submitForm}>
 				<FilterDesc getValue={getDescValue} onSubmit={submitForm} />
 				<FilterLocation getValue={getLocationValue} />
@@ -113,11 +128,7 @@ function SearchBar(props) {
 					submitForm={submitForm}
 				/>
 			)}
-			{/* <Modal
-				getLocationValue={getLocationValue}
-				getJobTypeValue={getFullTimeValue}
-			/> */}
-		</div>
+		</nav>
 	);
 }
 

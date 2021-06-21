@@ -16,7 +16,6 @@
 		background: $s-white;
 		position: relative;
 		display: flex;
-		// flex-wrap: wrap;
 		padding: 1.2rem 1.5rem 1.5rem 1.5rem;
 		margin-bottom: 1.5rem;
 
@@ -45,12 +44,10 @@
 	&-jobType {
 		display: flex;
 		flex-direction: column;
-		// align-items: center;
 		padding: 1.5rem;
 
 		&__checkbox {
 			margin-bottom: 2rem;
-			// text-align: center;
 		}
 
 		& label {

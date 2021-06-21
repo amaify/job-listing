@@ -37,7 +37,7 @@ export const mainReducer = (state = initialState, action) => {
 			newArray = action.newJobs;
 			return {
 				...state,
-				newArray: action.newJobs,
+				newArray: newArray,
 				noJobFound: false,
 				loading: false,
 				search: true,

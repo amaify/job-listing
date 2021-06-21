@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Input from "../../input/input";
 import SearchIcon from "../../../assets/images/desktop/icon-search.svg";
 import FilterIcon from "../../../assets/images/mobile/icon-filter.svg";

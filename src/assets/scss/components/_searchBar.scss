@@ -3,7 +3,6 @@
 	position: absolute;
 	width: 100%;
 	top: 98px;
-	// left: 0;
 
 	&-contents {
 		display: flex;
@@ -16,53 +15,14 @@
 
 	@include responsive_mode(tablet-portrait) {
 		padding: 0 3rem;
-		// position: absolute;
-		// width: 100%;
-		// top: 98px;
-		// left: 0;
-
-		&-contents {
-			display: flex;
-			padding: 1rem 1.5rem 1rem 2rem;
-			align-items: center;
-			background: $s-white;
-			overflow: hidden;
-			border-radius: 4px;
-		}
 	}
 
 	@include responsive_mode(tablet) {
 		padding: 0 4rem;
-		// position: absolute;
-		// width: 100%;
-		// top: 98px;
-		// left: 0;
-
-		&-contents {
-			display: flex;
-			padding: 1rem 1.5rem 1rem 2rem;
-			align-items: center;
-			background: $s-white;
-			overflow: hidden;
-			border-radius: 4px;
-		}
 	}
 
 	@include responsive_mode(desktop) {
 		padding: 0 15rem;
-		// position: absolute;
-		// width: 100%;
-		// top: 98px;
-		// left: 0;
-
-		&-contents {
-			display: flex;
-			padding: 1rem 1.5rem 1rem 2rem;
-			align-items: center;
-			background: $s-white;
-			overflow: hidden;
-			border-radius: 4px;
-		}
 	}
 }
 
@@ -87,24 +47,10 @@
 	}
 
 	@include responsive_mode(tablet-portrait) {
-		// display: flex;
-		// position: relative;
-
 		& img {
 			margin-right: 1.5rem;
-			// display: block;
 		}
 
-		// & input {
-		// 	width: 100%;
-		// 	border: none;
-		// 	outline: none;
-
-		// 	&:focus {
-		// 		border: none;
-		// 		outline: none;
-		// 	}
-		// }
 		&::after {
 			content: "";
 			width: 1px;
@@ -121,10 +67,6 @@
 
 .description {
 	width: 100%;
-
-	// & input {
-	// margin-right: auto;
-	// }
 
 	&__image {
 		&--searchIcon {
@@ -145,8 +87,6 @@
 
 .jobtype {
 	display: none;
-	align-items: center;
-	width: 25%;
 
 	& input {
 		margin-right: 2rem;
@@ -163,7 +103,6 @@
 @include responsive_mode(tablet-portrait) {
 	.description {
 		width: 30%;
-		// overflow: hidden;
 
 		&__image {
 			&--searchIcon {
@@ -186,15 +125,8 @@
 		align-items: center;
 		width: 40%;
 
-		& input {
-			margin-right: 2rem;
-		}
-
 		& label {
-			font-size: 1.5rem;
-			text-transform: capitalize;
-			font-weight: 600;
-			margin-right: 2.5rem;
+			margin-right: auto;
 		}
 
 		& button {
@@ -224,18 +156,9 @@
 	}
 
 	.jobtype {
-		display: flex;
-		align-items: center;
 		width: 25%;
 
-		& input {
-			margin-right: 2rem;
-		}
-
 		& label {
-			font-size: 1.5rem;
-			text-transform: capitalize;
-			font-weight: 600;
 			margin-right: 2.5rem;
 		}
 	}
@@ -262,23 +185,21 @@
 	}
 
 	.jobtype {
-		display: flex;
-		align-items: center;
-		width: 25%;
-
-		& input {
-			margin-right: 2rem;
-		}
-
-		& label {
-			font-size: 1.5rem;
-			text-transform: capitalize;
-			font-weight: 600;
-			margin-right: 2.5rem;
-		}
-
 		& button {
 			padding: 1rem 3rem;
 		}
+	}
+}
+
+.scrolled {
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+	padding: 0;
+	inset: 0;
+
+	& form {
+		width: 100%;
+		box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.3);
 	}
 }

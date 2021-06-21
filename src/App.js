@@ -1,15 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Routes } from "./components/routes/routes";
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
 import { useDispatch } from "react-redux";
-import axios from "axios";
 
 import { GlobalStyle } from "./components/theme/global";
 import { ThemeProvider } from "styled-components";
 
 import "./assets/scss/main.css";
-import { loadData } from "./store/actions/actions";
 import { getData, hideModal } from "./store/utils/utility";
 
 function getInitialTheme(themeMode) {
@@ -47,7 +44,6 @@ function App(props) {
 				<GlobalStyle />
 				<div className="body">
 					{modal && <div className="backdrop" onClick={removeModal}></div>}
-					{/* <div className="backdrop" onClick={removeModal}></div> */}
 					<Routes />
 				</div>
 			</>

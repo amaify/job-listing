@@ -3,16 +3,11 @@ import { Link } from "react-router-dom";
 import { useDispatch, connect } from "react-redux";
 
 import Toggle from "../toggleSwitch/toggle";
-import {
-	setThemeLight,
-	setThemeDark,
-	setToggle,
-} from "../../store/utils/utility";
-import { setThemeToLight } from "../../store/actions/actions";
+import { setThemeLight, setThemeDark } from "../../store/utils/utility";
 
 function Header(props) {
 	const dispatch = useDispatch();
-	const [toggle, setToggle] = useState(props.toggled);
+	const [, setToggle] = useState(props.toggled);
 
 	useEffect(() => {
 		localStorage.setItem("toggle", JSON.stringify(props.toggled));

@@ -5,8 +5,6 @@
 	&__cards {
 		display: flex;
 		flex-direction: column;
-		// justify-content: space-between;
-		// flex-wrap: wrap;
 		text-align: left;
 
 		&--jobLoaded {
@@ -30,71 +28,26 @@
 
 	@include responsive_mode(tablet-portrait) {
 		padding: 10rem 3rem 5rem 3rem;
-		text-align: center;
 
 		&__cards {
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
 			flex-wrap: wrap;
-			text-align: left;
 
 			&--jobLoaded {
 				font-size: 2rem;
-				color: $p-midnight;
-				background: $p-light-violet;
 				width: 30%;
-				margin: 0 auto;
-				padding: 2rem 0;
-				border-radius: 4px;
 			}
 		}
 	}
 
 	@include responsive_mode(tablet) {
 		padding: 10rem 4rem 5rem 4rem;
-		text-align: center;
-
-		&__cards {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-			flex-wrap: wrap;
-			text-align: left;
-
-			&--jobLoaded {
-				font-size: 2rem;
-				color: $p-midnight;
-				background: $p-light-violet;
-				width: 30%;
-				margin: 0 auto;
-				padding: 2rem 0;
-				border-radius: 4px;
-			}
-		}
 	}
 
 	@include responsive_mode(desktop) {
 		padding: 15rem 15rem 5rem 15rem;
-		text-align: center;
-
-		&__cards {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-			flex-wrap: wrap;
-			text-align: left;
-
-			&--jobLoaded {
-				font-size: 2rem;
-				color: $p-midnight;
-				background: $p-light-violet;
-				width: 30%;
-				margin: 0 auto;
-				padding: 2rem 0;
-				border-radius: 4px;
-			}
-		}
 	}
 }
 

@@ -1,13 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {
-	timeDifference,
-	logo,
-	formatDate,
-} from "../cardComponents/cardUtility";
+import { logo, formatDate } from "../cardComponents/cardUtility";
 import Button from "../button/button";
 import { BallTriangle } from "react-loading-icons";
-import Modal from "../modal/modal";
 
 import { connect } from "react-redux";
 
@@ -15,7 +10,7 @@ function Cards(props) {
 	let { jobData, loading, fetchFailed, noJob } = props;
 	const [visible, setVisible] = useState(15);
 
-	props.search ? (jobData = props.filteredJobs) : (jobData = jobData);
+	props.search ? (jobData = props.filteredJobs) : (jobData = props.jobData);
 
 	const spinner = (
 		<p className="main-container__loading">
@@ -98,7 +93,6 @@ function Cards(props) {
 			) : (
 				<Button text="Load More" btnNumber="1" onClick={showMoreJobs} />
 			)}
-			{/* <Modal /> */}
 		</main>
 	);
 }

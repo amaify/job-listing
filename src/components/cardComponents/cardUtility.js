@@ -63,3 +63,19 @@ export const formatDate = (date) => {
 
 	return newDate + " ago";
 };
+
+// export function getURLFromString(urlString) {
+// 	let newLink;
+// 	let urlRegex =
+// 		/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi;
+
+// 	urlString.replace(urlRegex, (url) => {
+// 		newLink = url;
+// 	});
+
+// 	newLink === undefined
+// 		? (newLink = "https://google.com")
+// 		: (newLink = newLink);
+
+// 	return newLink;
+// }

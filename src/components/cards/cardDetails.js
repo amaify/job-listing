@@ -1,11 +1,7 @@
 import React from "react";
 import Button from "../button/button";
-import { Link, useHistory } from "react-router-dom";
-import {
-	timeDifference,
-	logo,
-	formatDate,
-} from "../cardComponents/cardUtility";
+import { useHistory } from "react-router-dom";
+import { logo, formatDate } from "../cardComponents/cardUtility";
 
 function removeURLString(companyLink) {
 	let url = companyLink;
@@ -14,27 +10,6 @@ function removeURLString(companyLink) {
 		: (url = url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split("/")[0]);
 
 	return url;
-}
-
-function getURLFromString(urlString) {
-	let newLink;
-	let urlRegex =
-		/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi;
-
-	// return urlString.replace(urlRegex, (url) => {
-	// 	newLink = url;
-	// 	console.log(newLink);
-	// 	return newLink;
-	// });
-	urlString.replace(urlRegex, (url) => {
-		newLink = url;
-	});
-
-	newLink === undefined
-		? (newLink = "https://google.com")
-		: (newLink = newLink);
-
-	return newLink;
 }
 
 function CardDetails() {

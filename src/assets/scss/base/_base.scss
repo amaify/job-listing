@@ -10,7 +10,6 @@
 
 body {
 	font-family: "Kumbh Sans", sans-serif;
-	background: $s-light-grey;
 	position: relative;
 }
 
@@ -25,6 +24,6 @@ html {
 
 @media (prefers-reduced-motion: no-preference) {
 	.App-logo {
-	  animation: App-logo-spin infinite 20s linear;
+		animation: App-logo-spin infinite 20s linear;
 	}
-  }
+}
