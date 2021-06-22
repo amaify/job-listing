@@ -43,7 +43,7 @@ function Cards(props) {
 					<Link
 						className="card-content"
 						to={{
-							pathname: `/jobs/${job.id}`,
+							pathname: `/${job.id}`,
 							state: job,
 						}}
 					>

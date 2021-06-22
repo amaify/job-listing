@@ -6,7 +6,7 @@ export const Routes = () => {
 	return (
 		<Switch>
 			<Route path="/" exact component={Home} />
-			<Route path="/jobs/:id" exact component={Details} />
+			<Route path="/:id" exact component={Details} />
 		</Switch>
 	);
 };
