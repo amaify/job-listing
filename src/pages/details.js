@@ -6,13 +6,13 @@ import CardDetails from "../components/cards/cardDetails";
 function Details() {
 	const history = useHistory();
 
-	useEffect(() => {
-		window.addEventListener("unload", (e) => {
-			if (e.type === "unload") {
-				history.goBack();
-			}
-		});
-	});
+	// useEffect(() => {
+	// 	window.addEventListener("unload", (e) => {
+	// 		if (e.type === "unload") {
+	// 			history.goBack();
+	// 		}
+	// 	});
+	// });
 	return (
 		<>
 			<Header />

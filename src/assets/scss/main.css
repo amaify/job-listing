@@ -708,6 +708,36 @@ html {
   transition: all 0.3s ease-in;
 }
 
+.notFound {
+  margin-top: 15rem;
+  padding: 5rem 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.notFound h1 {
+  font-size: 7rem;
+  font-weight: 300;
+  margin-bottom: 4rem;
+}
+
+.notFound a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 4rem;
+  background: #5964e0;
+  padding: 1.5rem 3rem;
+  border-radius: 8px;
+}
+
 .cardDetails {
   position: relative;
   padding: 0 2rem;

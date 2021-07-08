@@ -1,14 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { logo, formatDate } from "../cardComponents/cardUtility";
 import Button from "../button/button";
 import { BallTriangle } from "react-loading-icons";
 
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
+import { setLink, unSetLink } from "../../store/actions/actions";
 
 function Cards(props) {
 	let { jobData, loading, fetchFailed, noJob } = props;
 	const [visible, setVisible] = useState(15);
+	const dispactch = useDispatch();
+
+	useEffect(() => {
+		dispactch(unSetLink());
+	}, [dispactch]);
 
 	props.search ? (jobData = props.filteredJobs) : (jobData = props.jobData);
 
@@ -46,6 +52,8 @@ function Cards(props) {
 							pathname: `/${job.id}`,
 							state: job,
 						}}
+						// onClick={dispactch(setLink)}
+						onClick={() => dispactch(setLink())}
 					>
 						<div className="card-content__items">
 							<p className="card-content__items--jobAge">
@@ -107,6 +115,7 @@ const mapStateToProps = (state) => {
 		loading: state.loading,
 		noJob: state.noJobFound,
 		fetchFailed: state.failed,
+		setLink: state.setLink,
 	};
 };
 

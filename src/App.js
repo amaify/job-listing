@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Routes } from "./components/routes/routes";
+import Routes from "./components/routes/routes";
 import { connect, useDispatch } from "react-redux";
 
 import { GlobalStyle } from "./components/theme/global";

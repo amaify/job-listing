@@ -1,12 +1,25 @@
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
 import Home from "../../pages/home";
 import Details from "../../pages/details";
+import NotFound from "../../pages/notFound";
 
-export const Routes = () => {
+const Routes = (props) => {
 	return (
 		<Switch>
 			<Route path="/" exact component={Home} />
-			<Route path="/:id" exact component={Details} />
+			{props.setLink ? <Route path="/:id" exact component={Details} /> : ""}
+			{/* <Route path="/:id" exact component={Details} /> */}
+			<Route component={NotFound} />
+			{/* <Redirect to="/not" /> */}
 		</Switch>
 	);
 };
+
+const mapStateToProps = (state) => {
+	return {
+		setLink: state.setLink,
+	};
+};
+
+export default connect(mapStateToProps, null)(Routes);

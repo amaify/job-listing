@@ -100,3 +100,15 @@ export const removeModal = () => {
 		type: actionType.REMOVE_MODAL,
 	};
 };
+
+export const setLink = () => {
+	return {
+		type: actionType.SET_LINK,
+	};
+};
+
+export const unSetLink = () => {
+	return {
+		type: actionType.UNSET_LINK,
+	};
+};

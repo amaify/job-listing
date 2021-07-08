@@ -7,6 +7,7 @@ const initialState = {
 	showModal: false,
 	setToggle: false,
 	failed: false,
+	setLink: false,
 	noJobFound: false,
 	networkError: false,
 	setTheme: { mode: "light" },
@@ -51,6 +52,12 @@ export const mainReducer = (state = initialState, action) => {
 
 		case actionType.NO_JOB:
 			return { ...state, noJobFound: true };
+
+		case actionType.SET_LINK:
+			return { ...state, setLink: true };
+
+		case actionType.UNSET_LINK:
+			return { ...state, setLink: false };
 
 		default:
 			return state;

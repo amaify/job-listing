@@ -17,14 +17,14 @@ function CardDetails() {
 	const locationData = useHistory();
 	const data = locationData.location.state;
 
+	useEffect(() => {
+		return window.scrollTo(0, 0);
+	}, []);
+
 	let companyLink = data.company_url;
 	!companyLink
 		? (companyLink = "https://google.com")
 		: (companyLink = data.url);
-
-	useEffect(() => {
-		return window.scrollTo(0, 0);
-	}, []);
 
 	return (
 		<>

@@ -13,3 +13,6 @@ export const NEW_JOB_DATA = "NEW_JOB_DATA";
 export const NO_JOB = "NO_JOB";
 export const SHOW_MODAL = "SHOW_MODAL";
 export const REMOVE_MODAL = "REMOVE_MODAL";
+
+export const SET_LINK = "SET_LINK";
+export const UNSET_LINK = "UNSET_LINK";
